@@ -229,7 +229,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute -right-2 top-1/3 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3 z-20"
+                  className="absolute -right-2 top-1/3 bg-white rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3 z-20"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                     <User className="size-5 text-white" />
@@ -253,7 +253,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
-                  className="absolute -left-2 bottom-1/4 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3 z-20"
+                  className="absolute -left-2 bottom-1/4 bg-white rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3 z-20"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                     <Heart className="size-5 text-white" />
