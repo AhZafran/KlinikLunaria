@@ -114,6 +114,11 @@ export const brand = {
       description: "Newborn circumcision with specialist care",
       icon: "Heart",
     },
+    {
+      name: "Weight Management",
+      description: "Personalized weight management programs and guidance",
+      icon: "Activity",
+    },
   ],
 
   // ============================================
@@ -146,6 +151,11 @@ export const brand = {
       name: "Pediatric Care",
       description: "Dedicated healthcare services for infants and children",
       image: "/images/kepakaran/pediatric.jpg",
+    },
+    {
+      name: "Weight Management",
+      description: "Personalized weight management programs for healthy lifestyle",
+      image: "/images/kepakaran/weight-management.jpg",
     },
   ],
 

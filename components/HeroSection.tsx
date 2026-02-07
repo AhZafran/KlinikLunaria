@@ -112,16 +112,13 @@ export default function HeroSection() {
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" variant="gradient" asChild>
                 <a
-                  href={getWhatsAppUrl()}
+                  href="https://wa.link/4l4b3o"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Book Appointment
                   <ArrowRight className="size-5" />
                 </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="#services">View Services</a>
               </Button>
             </div>
 

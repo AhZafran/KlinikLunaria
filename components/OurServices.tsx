@@ -13,6 +13,7 @@ import {
   UserCheck,
   Users,
   Heart,
+  Activity,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { brand } from "@/lib/brand";
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   UserCheck,
   Users,
   Heart,
+  Activity,
 };
 
 export default function OurServices() {
