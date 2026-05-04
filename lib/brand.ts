@@ -157,6 +157,18 @@ export const brand = {
       description: "Personalized weight management programs for healthy lifestyle",
       image: "/images/kepakaran/weight-management.jpg",
     },
+    {
+      name: "Weight Loss Injection",
+      description:
+        "Offers weight loss injections in Petaling Jaya to help you achieve your weight management goals with proven, effective treatments.",
+      image: "/images/kepakaran/weight-loss-injection.avif",
+    },
+    {
+      name: "Weight Loss Medicine",
+      description:
+        "Offers effective weight loss medicine solutions tailored to help you achieve sustainable weight management.",
+      image: "/images/kepakaran/weight-loss-medicine.avif",
+    },
   ],
 
   // ============================================
