@@ -14,6 +14,7 @@ import {
   Users,
   Heart,
   Activity,
+  BookHeart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { brand } from "@/lib/brand";
@@ -30,6 +31,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Users,
   Heart,
   Activity,
+  BookHeart,
 };
 
 export default function OurServices() {

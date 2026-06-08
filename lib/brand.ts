@@ -119,6 +119,12 @@ export const brand = {
       description: "Personalized weight management programs and guidance",
       icon: "Activity",
     },
+    {
+      name: "Buka Buku Pink & Antenatal Care",
+      description:
+        "Open your Buku Pink, booking blood tests, and pregnancy scans — full antenatal care under one roof",
+      icon: "BookHeart",
+    },
   ],
 
   // ============================================
@@ -168,6 +174,12 @@ export const brand = {
       description:
         "Offers effective weight loss medicine solutions tailored to help you achieve sustainable weight management.",
       image: "/images/kepakaran/weight-loss-medicine.avif",
+    },
+    {
+      name: "Buka Buku Pink & Pregnancy Scan",
+      description:
+        "Open your Buku Rekod Kesihatan Ibu Mengandung, dating and growth ultrasound scans, and ongoing doctor-led antenatal check-ups.",
+      image: "/images/kepakaran/pediatric.jpg",
     },
   ],
 
