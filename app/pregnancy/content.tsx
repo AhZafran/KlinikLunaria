@@ -45,7 +45,7 @@ const pillars = [
     icon: Scan,
     title: "Pregnancy Ultrasound Scan",
     summary:
-      "Doctor-performed ultrasound to confirm pregnancy, estimate due date, check baby's growth, and give you reassurance through every trimester.",
+      "Doctor-performed ultrasound — available in 2D, 3D, 4D and 5D — to confirm pregnancy, estimate due date, check baby's growth, and give you keepsake images of your little one.",
   },
 ];
 
@@ -113,14 +113,15 @@ const detailedServices = [
   },
   {
     id: "scan",
-    title: "Pregnancy Ultrasound Scan",
+    title: "Pregnancy Ultrasound Scan (2D – 5D)",
     image: "/images/kepakaran/baby-ultrasound.jpeg",
     description:
-      "A bedside ultrasound performed by our doctor during your consultation. Scans are used to confirm pregnancy, estimate your due date, check that baby is growing well, and reassure you between routine visits. We will explain what we see in real time and record key findings in your Buku Pink.",
+      "A bedside ultrasound performed by our doctor during your consultation, available in 2D, 3D, 4D and 5D. Use 2D for standard clinical assessment — confirming pregnancy, estimating your due date, and checking baby's growth — and 3D / 4D / 5D for lifelike images and video of your baby's face and movements, perfect as a keepsake. We will explain what we see in real time and record key findings in your Buku Pink.",
     suitableFor: [
-      "Confirming pregnancy after a positive home test",
-      "Establishing an accurate due date in the first trimester",
-      "Monitoring baby's growth and position in later pregnancy",
+      "Confirming pregnancy after a positive home test (2D)",
+      "Establishing an accurate due date in the first trimester (2D)",
+      "Monitoring baby's growth and position in later pregnancy (2D)",
+      "3D / 4D / 5D bonding scans for keepsake photos and videos",
       "Reassurance scans when you simply want to check baby is well",
     ],
     safety:
@@ -468,8 +469,9 @@ export default function PregnancyContent() {
                 Types of Ultrasound We Perform
               </h3>
               <p className="text-sm text-muted-foreground mb-6">
-                Our scans are performed by the doctor during your consultation
-                and are aimed at routine monitoring and reassurance.
+                Our scans are performed by the doctor during your consultation,
+                available in 2D, 3D, 4D and 5D — for routine monitoring,
+                reassurance, and keepsake images of your baby.
               </p>
               <div className="space-y-4">
                 {scanTypes.map((s) => (
