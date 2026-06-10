@@ -277,10 +277,10 @@ export default function PregnancyContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative aspect-square max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-white">
+              <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/images/kepakaran/buku-pink-lunaria.png"
-                  alt="Jom Buka Buku Pink di Klinik Lunaria"
+                  src="/images/kepakaran/scan-happy-hour.jpeg"
+                  alt="Scan Happy Hour at Klinik Lunaria — Khamis & Jumaat 10am to 4pm"
                   fill
                   className="object-contain"
                   priority
