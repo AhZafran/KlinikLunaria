@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { brand, getWhatsAppUrl, getEmailUrl } from "@/lib/brand";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const whatsAppUrl = getWhatsAppUrl(pathname);
 
   return (
     <footer className="bg-foreground text-background">
@@ -170,7 +173,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href={getWhatsAppUrl()}
+        href={whatsAppUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 p-4 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"

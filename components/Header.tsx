@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -21,6 +22,8 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const whatsAppUrl = getWhatsAppUrl(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +78,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="whatsapp" size="lg" asChild>
               <a
-                href={getWhatsAppUrl()}
+                href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -128,7 +131,7 @@ export default function Header() {
                 <div className="pt-4 space-y-2">
                   <Button variant="whatsapp" className="w-full" asChild>
                     <a
-                      href={getWhatsAppUrl()}
+                      href={whatsAppUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

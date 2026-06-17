@@ -22,8 +22,11 @@ import {
   Scan,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { brand, getWhatsAppUrl } from "@/lib/brand";
+import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
+
+// Page-specific WhatsApp link for the pregnancy landing page
+const whatsAppLink = "https://wa.link/etz1ni";
 
 const pillars = [
   {
@@ -245,7 +248,7 @@ export default function PregnancyContent() {
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button size="lg" variant="gradient" asChild>
                   <a
-                    href={getWhatsAppUrl()}
+                    href={whatsAppLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -667,7 +670,7 @@ export default function PregnancyContent() {
                 </p>
                 <Button variant="secondary" asChild>
                   <a
-                    href={getWhatsAppUrl()}
+                    href={whatsAppLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -748,7 +751,7 @@ export default function PregnancyContent() {
             <div className="flex flex-wrap justify-center gap-3">
               <Button size="lg" variant="whatsapp" asChild>
                 <a
-                  href={getWhatsAppUrl()}
+                  href={whatsAppLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

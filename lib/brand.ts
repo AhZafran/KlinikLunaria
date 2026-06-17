@@ -290,8 +290,18 @@ export const brand = {
 // ============================================
 // HELPER FUNCTIONS
 // ============================================
-export function getWhatsAppUrl() {
-  // Always use the direct wa.link
+// Page-specific WhatsApp links, keyed by pathname.
+// Falls back to the default brand link for any path not listed here.
+export const whatsAppLinksByPath: Record<string, string> = {
+  "/pregnancy": "https://wa.link/etz1ni",
+  "/penurunan-berat-badan": "https://wa.link/9322qp",
+};
+
+export function getWhatsAppUrl(pathname?: string) {
+  if (pathname && whatsAppLinksByPath[pathname]) {
+    return whatsAppLinksByPath[pathname];
+  }
+  // Default direct wa.link
   return brand.contact.whatsappLink;
 }
 
