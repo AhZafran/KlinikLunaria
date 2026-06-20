@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: `Buka Buku Pink & Pregnancy Scan | ${brand.name}`,
     description:
       "Start your antenatal journey with us — Buku Pink registration, pregnancy scans, and doctor-led check-ups under one roof in Petaling Jaya.",
-    url: "https://kliniklunaria.com/pregnancy",
+    url: "https://www.kliniklunaria.my/pregnancy",
     type: "website",
     images: [
       {

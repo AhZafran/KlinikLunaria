@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   authors: [{ name: brand.name }],
   creator: brand.name,
   publisher: brand.name,
-  metadataBase: new URL("https://kliniklunaria.com"),
+  metadataBase: new URL("https://www.kliniklunaria.my"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: `${brand.name} | ${brand.tagline}`,
     description: brand.description,
-    url: "https://kliniklunaria.com",
+    url: "https://www.kliniklunaria.my",
     siteName: brand.name,
     images: [
       {

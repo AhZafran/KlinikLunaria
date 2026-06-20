@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: `Weight Loss & Weight Management | ${brand.name}`,
     description:
       "Safe, doctor-supervised weight loss in Petaling Jaya — injections, medication, and tailored dietary support, all under one roof.",
-    url: "https://kliniklunaria.com/weight-loss",
+    url: "https://www.kliniklunaria.my/weight-loss",
     type: "website",
     images: [
       {

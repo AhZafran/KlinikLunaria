@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: `Scan Kehamilan 2D – 5D | ${brand.name}`,
     description:
       "Imbasan ultrasound kehamilan 2D hingga 5D diselia doktor di Petaling Jaya — pemantauan, kepastian, dan imej kenangan bayi anda.",
-    url: "https://kliniklunaria.com/scan-kehamilan",
+    url: "https://www.kliniklunaria.my/scan-kehamilan",
     type: "website",
     locale: "ms_MY",
     images: [

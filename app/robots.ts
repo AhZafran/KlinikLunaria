@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/admin/"],
       },
     ],
-    sitemap: "https://kliniklunaria.com/sitemap.xml",
+    sitemap: "https://www.kliniklunaria.my/sitemap.xml",
   };
 }

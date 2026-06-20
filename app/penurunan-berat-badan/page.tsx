@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: `Program Penurunan Berat Badan | ${brand.name}`,
     description:
       "Program penurunan berat badan selamat diselia doktor di Petaling Jaya — suntikan, ubat, dan sokongan pemakanan disesuaikan, semua di bawah satu bumbung.",
-    url: "https://kliniklunaria.com/penurunan-berat-badan",
+    url: "https://www.kliniklunaria.my/penurunan-berat-badan",
     type: "website",
     locale: "ms_MY",
     images: [

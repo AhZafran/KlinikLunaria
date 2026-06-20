@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: `Buka Buku Pink & Penjagaan Antenatal | ${brand.name}`,
     description:
       "Mulakan perjalanan antenatal anda bersama kami — pendaftaran Buku Pink, pemeriksaan kehamilan, dan susulan diselia doktor di Petaling Jaya.",
-    url: "https://kliniklunaria.com/buka-buku-pink",
+    url: "https://www.kliniklunaria.my/buka-buku-pink",
     type: "website",
     locale: "ms_MY",
     images: [
