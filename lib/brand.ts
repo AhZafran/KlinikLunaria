@@ -295,6 +295,8 @@ export const brand = {
 export const whatsAppLinksByPath: Record<string, string> = {
   "/pregnancy": "https://wa.link/etz1ni",
   "/penurunan-berat-badan": "https://wa.link/9322qp",
+  "/scan-kehamilan": "https://wa.link/59re29",
+  "/buka-buku-pink": "https://wa.link/6fwv44",
 };
 
 export function getWhatsAppUrl(pathname?: string) {
