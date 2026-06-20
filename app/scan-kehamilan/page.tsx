@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { brand } from "@/lib/brand";
 import ScanKehamilanContent from "./content";
+import { faqs } from "./faqs";
 
 export const metadata: Metadata = {
   title: "Scan Kehamilan 2D – 5D",
@@ -39,6 +40,27 @@ export const metadata: Metadata = {
   },
 };
 
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function ScanKehamilanPage() {
-  return <ScanKehamilanContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <ScanKehamilanContent />
+    </>
+  );
 }
