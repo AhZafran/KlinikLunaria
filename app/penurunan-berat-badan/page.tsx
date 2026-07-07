@@ -4,15 +4,15 @@ import PenurunanBeratBadanContent from "./content";
 
 export const metadata: Metadata = {
   title: "Program Penurunan Berat Badan & Pengurusan Berat",
-  description: `Program penurunan berat badan diselia doktor di ${brand.name}, Petaling Jaya. Rawatan selamat berasaskan bukti yang menggabungkan suntikan penurunan berat badan, ubat preskripsi, dan pelan pemakanan peribadi. Tempah konsultasi dengan Dr Jihan Hanis hari ini.`,
+  description: `Program penurunan berat badan diselia doktor di ${brand.name}, Petaling Jaya. Rawatan selamat berasaskan bukti yang menggabungkan sokongan perubatan diselia doktor dan pelan pemakanan peribadi. Tempah konsultasi dengan Dr Jihan Hanis hari ini.`,
   keywords: [
     "penurunan berat badan petaling jaya",
-    "suntikan kurus malaysia",
-    "ubat kurus pj",
-    "klinik suntikan GLP-1",
+    "program kurus diselia doktor",
+    "klinik pengurusan berat badan pj",
+    "rawatan berat badan petaling jaya",
     "rawatan kurus diselia doktor",
     "klinik lunaria penurunan berat badan",
-    "rawatan obesiti malaysia",
+    "pengurusan berat badan malaysia",
     "klinik pengurusan berat pj",
   ],
   alternates: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Program Penurunan Berat Badan | ${brand.name}`,
     description:
-      "Program penurunan berat badan selamat diselia doktor di Petaling Jaya — suntikan, ubat, dan sokongan pemakanan disesuaikan, semua di bawah satu bumbung.",
+      "Program penurunan berat badan selamat diselia doktor di Petaling Jaya — rawatan perubatan dan sokongan pemakanan disesuaikan, semua di bawah satu bumbung.",
     url: "https://www.kliniklunaria.my/penurunan-berat-badan",
     type: "website",
     locale: "ms_MY",

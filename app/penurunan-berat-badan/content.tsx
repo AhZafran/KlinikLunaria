@@ -6,8 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
-  Syringe,
-  Pill,
+  HeartPulse,
   Salad,
   ShieldCheck,
   Stethoscope,
@@ -29,18 +28,18 @@ const whatsAppLink = "https://wa.link/9322qp";
 
 const pillars = [
   {
-    id: "suntikan",
-    icon: Syringe,
-    title: "Suntikan Penurunan Berat Badan",
+    id: "terapi",
+    icon: HeartPulse,
+    title: "Terapi Perubatan Penurunan Berat Badan",
     summary:
-      "Terapi suntikan berasaskan GLP-1 yang membantu mengurangkan selera makan dan memperbaiki kawalan gula darah, dipreskripsi dan diselia oleh doktor kami.",
+      "Rawatan perubatan yang membantu mengawal selera makan dan menyokong penurunan berat badan, diselia sepenuhnya oleh doktor kami.",
   },
   {
-    id: "ubat",
-    icon: Pill,
-    title: "Ubat Penurunan Berat Badan",
+    id: "sokongan",
+    icon: Stethoscope,
+    title: "Sokongan Perubatan Peribadi",
     summary:
-      "Ubat preskripsi oral yang disesuaikan dengan profil perubatan anda, dengan semakan berkala untuk memastikan keselamatan dan kemajuan.",
+      "Pelan rawatan yang disesuaikan dengan profil kesihatan anda, dengan semakan berkala untuk memastikan keselamatan dan kemajuan.",
   },
   {
     id: "diet",
@@ -53,42 +52,42 @@ const pillars = [
 
 const detailedServices = [
   {
-    id: "suntikan",
-    title: "Suntikan Penurunan Berat Badan",
+    id: "terapi",
+    title: "Terapi Perubatan Penurunan Berat Badan",
     image: "/images/kepakaran/weight-loss-injection.avif",
     description:
-      "Terapi suntikan penurunan berat badan kami menggunakan agonis reseptor GLP-1, kelas ubat yang sama yang banyak dikaji untuk pengurusan diabetes jenis 2 dan obesiti. Ia berfungsi dengan mengurangkan selera makan, melambatkan pengosongan perut, dan membantu anda berasa kenyang lebih lama.",
+      "Terapi perubatan penurunan berat badan kami direka untuk membantu mengurangkan selera makan, memanjangkan rasa kenyang, dan menyokong tabiat makan yang lebih sihat. Setiap rawatan diselia rapi oleh doktor dan disesuaikan dengan keperluan tubuh anda.",
     suitableFor: [
       "Dewasa dengan BMI ≥ 30",
-      "Dewasa dengan BMI ≥ 27 dan keadaan berkaitan berat badan (cth. darah tinggi, diabetes jenis 2, kolesterol tinggi)",
+      "Dewasa dengan BMI ≥ 27 dan keadaan berkaitan berat badan (cth. darah tinggi, kolesterol tinggi)",
       "Pesakit yang sukar mencapai hasil melalui diet dan senaman sahaja",
     ],
     safety:
-      "Setiap pelan suntikan dipreskripsi selepas penilaian perubatan. Kami menyemak sejarah perubatan, ubat-ubatan, dan matlamat anda sebelum memulakan, dan membuat susulan berkala untuk memantau kesan sampingan dan kemajuan.",
+      "Setiap pelan rawatan disediakan selepas penilaian perubatan. Kami menyemak sejarah kesihatan, gaya hidup, dan matlamat anda sebelum memulakan, dan membuat susulan berkala untuk memantau kemajuan anda.",
   },
   {
-    id: "ubat",
-    title: "Ubat Penurunan Berat Badan",
+    id: "sokongan",
+    title: "Sokongan Perubatan Peribadi",
     image: "/images/kepakaran/weight-loss-medicine.avif",
     description:
-      "Untuk pesakit yang lebih suka rawatan oral atau mempunyai pertimbangan perubatan tertentu, kami menawarkan ubat preskripsi untuk penurunan berat badan. Setiap preskripsi dipadankan dengan profil kesihatan anda, dengan dos yang diselaraskan dari masa ke masa berdasarkan tindak balas anda.",
+      "Untuk pesakit yang memerlukan sokongan tambahan, kami menawarkan pelan rawatan peribadi yang dipadankan dengan profil kesihatan anda. Pelan diselaraskan dari semasa ke semasa berdasarkan kemajuan dan tindak balas tubuh anda.",
     suitableFor: [
-      "Pesakit yang mencari alternatif kepada terapi suntikan",
-      "Dewasa dengan risiko kesihatan berkaitan berat badan yang akan mendapat manfaat daripada sokongan farmakologi",
+      "Pesakit yang mencari pendekatan selain terapi utama",
+      "Dewasa dengan risiko kesihatan berkaitan berat badan yang memerlukan sokongan perubatan",
       "Pesakit yang pernah mencuba menurunkan berat badan tetapi tidak berjaya",
     ],
     safety:
-      "Kami hanya membekalkan ubat yang diluluskan dan didaftarkan untuk pengurusan berat badan. Doktor kami akan menerangkan cara ia berfungsi, apa yang perlu dijangkakan, dan apa yang perlu diawasi sebelum anda memulakannya.",
+      "Semua rawatan diselia oleh doktor kami. Doktor akan menerangkan cara pelan berfungsi, apa yang perlu dijangkakan, dan perkara yang perlu diawasi sebelum anda memulakannya.",
   },
   {
     id: "diet",
     title: "Pelan Pemakanan Peribadi",
     image: "/images/kepakaran/weight-management.jpg",
     description:
-      "Penurunan berat badan yang berkekalan memerlukan lebih daripada sekadar ubat — ia memerlukan cara pemakanan yang anda boleh teruskan. Kami membina rangka makanan yang fleksibel mengikut rutin harian, citarasa makanan, dan keperluan budaya anda, supaya ia sesuai dengan kehidupan anda di Malaysia.",
+      "Penurunan berat badan yang berkekalan memerlukan lebih daripada sekadar rawatan — ia memerlukan cara pemakanan yang anda boleh teruskan. Kami membina rangka makanan yang fleksibel mengikut rutin harian, citarasa makanan, dan keperluan budaya anda, supaya ia sesuai dengan kehidupan anda di Malaysia.",
     suitableFor: [
-      "Pesakit yang menjalani terapi suntikan atau ubat yang ingin memaksimumkan hasil",
-      "Pesakit dengan masalah berat badan ringan hingga sederhana yang belum memerlukan ubat",
+      "Pesakit yang menjalani rawatan perubatan yang ingin memaksimumkan hasil",
+      "Pesakit dengan masalah berat badan ringan hingga sederhana yang belum memerlukan rawatan tambahan",
       "Sesiapa yang mahukan pelan yang jelas dan dipandu doktor berbanding diet ikut trend",
     ],
     safety:
@@ -122,13 +121,13 @@ const steps = [
     icon: Stethoscope,
     title: "Penilaian Perubatan",
     description:
-      "Doktor kami menyemak sejarah perubatan, ubat-ubatan semasa, gaya hidup, dan matlamat berat badan anda — serta mengukur petunjuk penting (BMI, tekanan darah dan lain-lain).",
+      "Doktor kami menyemak sejarah perubatan, rawatan semasa, gaya hidup, dan matlamat berat badan anda — serta mengukur petunjuk penting (BMI, tekanan darah dan lain-lain).",
   },
   {
     icon: ClipboardList,
     title: "Pelan Peribadi",
     description:
-      "Berdasarkan penilaian, kami mencadangkan kombinasi suntikan, ubat, dan perubahan pemakanan yang sesuai — menerangkan setiap pilihan dengan jelas supaya anda boleh membuat keputusan bersama kami.",
+      "Berdasarkan penilaian, kami mencadangkan kombinasi rawatan perubatan dan perubahan pemakanan yang sesuai — menerangkan setiap pilihan dengan jelas supaya anda boleh membuat keputusan bersama kami.",
   },
   {
     icon: LineChart,
@@ -141,10 +140,10 @@ const steps = [
 const faqs = [
   {
     q: "Adakah rawatan penurunan berat badan di Klinik Lunaria halal?",
-    a: "Ya. Ubat-ubatan yang kami preskripsi adalah diluluskan untuk kegunaan di Malaysia, dan kami mengambil kira pertimbangan halal ketika mengesyorkan suntikan, ubat, dan pelan pemakanan. Jika anda mempunyai kebimbangan khusus, sila kemukakannya semasa konsultasi anda.",
+    a: "Ya. Kami mengambil kira pertimbangan halal ketika mengesyorkan pelan rawatan dan pemakanan anda. Jika anda mempunyai kebimbangan khusus, sila kemukakannya semasa konsultasi anda.",
   },
   {
-    q: "Adakah saya akan mengalami kesan sampingan daripada suntikan atau ubat?",
+    q: "Adakah saya akan mengalami kesan sampingan daripada rawatan?",
     a: "Sesetengah pesakit mengalami kesan sampingan ringan seperti loya, kurang selera makan, atau perubahan pencernaan sementara — terutamanya pada beberapa minggu pertama. Doktor kami akan menerangkan apa yang perlu dijangkakan, cara menguruskannya, dan bila perlu datang semula untuk semakan.",
   },
   {
@@ -165,7 +164,7 @@ const faqs = [
   },
   {
     q: "Bolehkah saya mula program ini jika saya hamil atau menyusu?",
-    a: "Tidak. Suntikan dan ubat penurunan berat badan tidak sesuai semasa kehamilan atau penyusuan. Jika anda merancang untuk hamil, sila bincangkan dengan doktor kami supaya kami boleh memberi nasihat yang sewajarnya.",
+    a: "Tidak. Sesetengah rawatan penurunan berat badan tidak sesuai semasa kehamilan atau penyusuan. Jika anda merancang untuk hamil, sila bincangkan dengan doktor kami supaya kami boleh memberi nasihat yang sewajarnya.",
   },
 ];
 
@@ -206,9 +205,9 @@ export default function PenurunanBeratBadanContent() {
               <p className="text-lg text-muted-foreground max-w-xl">
                 Di {brand.name}, kami membantu anda mencapai berat badan yang
                 lebih sihat melalui program perubatan yang dibina mengikut
-                tubuh, gaya hidup, dan matlamat anda — menggabungkan suntikan
-                penurunan berat badan, ubat preskripsi, dan pelan pemakanan
-                yang praktikal, semuanya di bawah penyeliaan doktor kami.
+                tubuh, gaya hidup, dan matlamat anda — menggabungkan rawatan
+                perubatan yang diselia doktor dan pelan pemakanan yang
+                praktikal, semuanya di bawah penyeliaan doktor kami.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
