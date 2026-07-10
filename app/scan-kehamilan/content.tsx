@@ -232,7 +232,7 @@ export default function ScanKehamilanContent() {
             >
               <div className="relative aspect-[4/5] max-w-md mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-white">
                 <Image
-                  src="/images/kepakaran/scan-happy-hour.jpeg"
+                  src="/images/kepakaran/scan-hero.jpeg"
                   alt="Scan Happy Hour di Klinik Lunaria — Khamis & Jumaat 10am hingga 4pm"
                   fill
                   className="object-contain"

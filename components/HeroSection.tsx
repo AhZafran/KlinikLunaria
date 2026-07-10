@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Calendar, Users, Star, ArrowRight, ChevronLeft, ChevronRight, Heart, User } from "lucide-react";
+import { Calendar, Users, Star, ArrowRight, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { brand, getWhatsAppUrl } from "@/lib/brand";
 import { cn } from "@/lib/utils";
@@ -218,30 +218,6 @@ export default function HeroSection() {
                 )}
               </div>
 
-              {/* Floating Badge - Doctor Name (Top Right) */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`name-${currentDoctor}`}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute -right-2 top-1/3 bg-white rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3 z-20"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                    <User className="size-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-foreground uppercase tracking-wide">
-                      {doctors[currentDoctor].name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {brand.name}
-                    </p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
               {/* Floating Badge - Specialty (Bottom Left) */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -250,7 +226,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
-                  className="absolute -left-2 bottom-1/4 bg-white rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3 z-20"
+                  className="absolute -left-16 bottom-1/3 bg-white rounded-xl shadow-lg px-4 py-3 hidden md:flex items-center gap-3 z-20"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                     <Heart className="size-5 text-white" />

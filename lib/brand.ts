@@ -64,7 +64,7 @@ export const brand = {
       title: "Founder & Medical Director",
       specialty: "General Practitioner",
       qualifications: "MBBS",
-      image: "/images/doctors/Dr-Jihan.png",
+      image: "/images/doctors/Dr-Jihan.jpeg",
       description:
         "Dr Jihan Hanis founded Klinik Lunaria with a vision to provide accessible, quality healthcare focused on preventive medicine and patient education.",
     },
