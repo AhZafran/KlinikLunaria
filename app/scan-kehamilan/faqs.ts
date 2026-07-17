@@ -16,10 +16,6 @@ export const faqs = [
     a: "Ya. Ultrasound diagnostik yang digunakan dalam penjagaan antenatal rutin dianggap selamat dan telah digunakan dalam kehamilan selama beberapa dekad. Kami hanya mengimbas apabila terdapat sebab klinikal yang munasabah.",
   },
   {
-    q: "Bolehkah imbasan memberitahu jantina bayi saya?",
-    a: "Jantina selalunya boleh dilihat dari sekitar 16 hingga 20 minggu, tetapi ketepatan bergantung pada kedudukan bayi dan tujuan imbasan. Keutamaan kami semasa imbasan ialah kesejahteraan bayi — jantina dikongsi apabila ia boleh dilihat dengan yakin.",
-  },
-  {
     q: "Adakah anda buat imbasan terperinci (anomali) 20 minggu?",
     a: "Imbasan dalam klinik kami adalah untuk penentuan tarikh, pertumbuhan, dan penilaian kesejahteraan. Untuk imbasan anomali terperinci — biasanya dilakukan sekitar 18 hingga 22 minggu — kami akan merujuk anda kepada sonografer atau pakar fetomaternal yang dilengkapi untuk tahap perincian itu.",
   },

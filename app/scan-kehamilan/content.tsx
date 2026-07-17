@@ -82,7 +82,7 @@ const detailedServices = [
     description:
       "Imbasan ultrasound di sisi katil yang dilakukan oleh doktor kami semasa konsultasi anda. Imbasan 2D ialah imbasan klinikal asas — kami gunakannya untuk mengesahkan kehamilan, menganggar tarikh bersalin, memeriksa pertumbuhan dan kedudukan bayi, serta merekod penemuan penting. Kami menerangkan apa yang kami lihat secara langsung.",
     suitableFor: [
-      "Mengesahkan kehamilan selepas ujian rumah positif",
+      "Semakan awal kehamilan pada trimester pertama",
       "Menetapkan tarikh bersalin yang tepat pada trimester pertama",
       "Memantau pertumbuhan dan kedudukan bayi pada kehamilan lewat",
       "Memeriksa degupan jantung dan kesejahteraan bayi",
