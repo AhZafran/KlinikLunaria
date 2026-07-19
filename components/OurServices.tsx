@@ -17,7 +17,7 @@ import {
   BookHeart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { brand } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 // Map icon names to Lucide components
@@ -35,6 +35,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function OurServices() {
+  const dict = useDictionary();
+  const services = dict.services.items;
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -75,14 +77,15 @@ export default function OurServices() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium mb-4">
-            Our Services
+            {dict.services.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Comprehensive <span className="text-primary">Healthcare Services</span>
+            {dict.services.heading.before}
+            <span className="text-primary">{dict.services.heading.highlight}</span>
+            {dict.services.heading.after}
           </h2>
           <p className="text-muted-foreground">
-            From general consultations to specialized procedures, we offer a wide
-            range of services to meet your healthcare needs.
+            {dict.services.subtitle}
           </p>
         </motion.div>
 
@@ -120,7 +123,7 @@ export default function OurServices() {
             className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 md:px-12"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {brand.services.map((service, index) => {
+            {services.map((service, index) => {
               const IconComponent = iconMap[service.icon] || Stethoscope;
               return (
                 <motion.div
@@ -153,7 +156,7 @@ export default function OurServices() {
 
         {/* Mobile Scroll Indicator */}
         <div className="flex justify-center gap-2 mt-4 md:hidden">
-          {brand.services.map((_, index) => (
+          {services.map((_, index) => (
             <div
               key={index}
               className="w-2 h-2 rounded-full bg-primary/30"

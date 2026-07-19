@@ -10,36 +10,39 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { brand, getWhatsAppUrl, getEmailUrl, getPhoneUrl } from "@/lib/brand";
-
-const contactMethods = [
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "Chat with us",
-    href: getWhatsAppUrl(),
-    color: "bg-[#25D366]",
-    isExternal: true,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: brand.contact.phone[0],
-    href: undefined,
-    color: "bg-primary",
-    isExternal: false,
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: brand.contact.email,
-    href: getEmailUrl(),
-    color: "bg-secondary",
-    isExternal: false,
-  },
-];
+import { brand, getWhatsAppUrl, getEmailUrl } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
 export default function ContactUs() {
+  const dict = useDictionary();
+
+  const contactMethods = [
+    {
+      icon: MessageCircle,
+      label: dict.contact.whatsappLabel,
+      value: dict.contact.whatsappValue,
+      href: getWhatsAppUrl(),
+      color: "bg-[#25D366]",
+      isExternal: true,
+    },
+    {
+      icon: Phone,
+      label: dict.contact.phoneLabel,
+      value: brand.contact.phone[0],
+      href: undefined,
+      color: "bg-primary",
+      isExternal: false,
+    },
+    {
+      icon: Mail,
+      label: dict.contact.emailLabel,
+      value: brand.contact.email,
+      href: getEmailUrl(),
+      color: "bg-secondary",
+      isExternal: false,
+    },
+  ];
+
   return (
     <section id="contact" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -51,14 +54,15 @@ export default function ContactUs() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Contact Us
+            {dict.contact.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Visit Us at <span className="text-primary">Menara PKNS</span>
+            {dict.contact.heading.before}
+            <span className="text-primary">{dict.contact.heading.highlight}</span>
+            {dict.contact.heading.after}
           </h2>
           <p className="text-muted-foreground">
-            We're conveniently located at the heart of Petaling Jaya. Come visit
-            us or get in touch through any of the channels below.
+            {dict.contact.subtitle}
           </p>
         </motion.div>
 
@@ -90,7 +94,7 @@ export default function ContactUs() {
                   rel="noopener noreferrer"
                 >
                   <Navigation className="size-4" />
-                  Get Directions
+                  {dict.contact.getDirections}
                 </a>
               </Button>
             </div>
@@ -110,7 +114,7 @@ export default function ContactUs() {
                   <MapPin className="size-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Our Location</h3>
+                  <h3 className="font-semibold mb-1">{dict.contact.locationTitle}</h3>
                   <p className="text-muted-foreground text-sm">
                     {brand.contact.address}
                   </p>
@@ -125,26 +129,26 @@ export default function ContactUs() {
                   <Clock className="size-6 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold mb-3">Operating Hours</h3>
+                  <h3 className="font-semibold mb-3">{dict.contact.hoursTitle}</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Monday - Saturday</span>
+                      <span className="text-muted-foreground">{dict.contact.weekdaysLabel}</span>
                       <span className="font-medium">{brand.hours.weekdays}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Sunday</span>
+                      <span className="text-muted-foreground">{dict.contact.sundayLabel}</span>
                       <span className="font-medium">{brand.hours.sunday}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Public Holidays</span>
+                      <span className="text-muted-foreground">{dict.contact.holidaysLabel}</span>
                       <span className="font-medium text-destructive">
-                        {brand.hours.holidays}
+                        {dict.contact.holidaysValue}
                       </span>
                     </div>
                   </div>
-                  {brand.hours.note && (
+                  {dict.contact.hoursNote && (
                     <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-border">
-                      {brand.hours.note}
+                      {dict.contact.hoursNote}
                     </p>
                   )}
                 </div>
@@ -196,11 +200,10 @@ export default function ContactUs() {
             {/* CTA */}
             <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-6 text-white">
               <h3 className="font-semibold text-lg mb-2">
-                Ready to Book an Appointment?
+                {dict.contact.ctaTitle}
               </h3>
               <p className="text-sm text-white/80 mb-4">
-                Contact us via WhatsApp for the fastest response. We're here to
-                help you with your healthcare needs.
+                {dict.contact.ctaText}
               </p>
               <Button variant="secondary" size="lg" asChild>
                 <a
@@ -209,7 +212,7 @@ export default function ContactUs() {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="size-5" />
-                  Book via WhatsApp
+                  {dict.contact.ctaButton}
                 </a>
               </Button>
             </div>

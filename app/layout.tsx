@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import HtmlLangSync from "@/components/HtmlLangSync";
 import { brand } from "@/lib/brand";
 
 const poppins = Poppins({
@@ -27,6 +28,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.kliniklunaria.my"),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-MY": "/",
+      "ms-MY": "/ms",
+      "x-default": "/",
+    },
   },
   openGraph: {
     title: `${brand.name} | ${brand.tagline}`,
@@ -97,6 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        <HtmlLangSync />
         <Header />
         <main>{children}</main>
         <Footer />

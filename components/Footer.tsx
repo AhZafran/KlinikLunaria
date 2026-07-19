@@ -5,11 +5,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { brand, getWhatsAppUrl, getEmailUrl } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const pathname = usePathname();
   const whatsAppUrl = getWhatsAppUrl(pathname);
+  const dict = useDictionary();
 
   return (
     <footer className="bg-foreground text-background">
@@ -27,9 +29,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
-              {brand.tagline}. Founded by Dr Jihan Hanis in {brand.foundedMonth}{" "}
-              {brand.foundedYear}, we focus on preventive health, occupational
-              health, and patient education.
+              {dict.footer.tagline}
             </p>
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
@@ -71,16 +71,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">{dict.footer.quickLinksTitle}</h3>
             <ul className="space-y-2">
-              {[
-                { name: "Home", href: "#" },
-                { name: "About Us", href: "#about" },
-                { name: "Our Services", href: "#services" },
-                { name: "Our Expertise", href: "#expertise" },
-                { name: "FAQ", href: "#faq" },
-                { name: "Contact Us", href: "#contact" },
-              ].map((link) => (
+              {dict.footer.quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -95,12 +88,12 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Our Services</h3>
+            <h3 className="font-semibold text-lg mb-4">{dict.footer.servicesTitle}</h3>
             <ul className="space-y-2">
-              {brand.services.slice(0, 6).map((service) => (
-                <li key={service.name}>
+              {dict.footer.services.map((service) => (
+                <li key={service}>
                   <span className="text-background/70 text-sm">
-                    {service.name}
+                    {service}
                   </span>
                 </li>
               ))}
@@ -109,7 +102,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">{dict.footer.contactTitle}</h3>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin className="size-5 text-secondary shrink-0 mt-0.5" />
@@ -143,8 +136,8 @@ export default function Footer() {
               <li className="flex gap-3">
                 <Clock className="size-5 text-secondary shrink-0 mt-0.5" />
                 <div className="text-background/70 text-sm">
-                  <p>Mon - Sat: {brand.hours.weekdays}</p>
-                  <p>Sunday: {brand.hours.sunday}</p>
+                  <p>{dict.footer.monSat}: {brand.hours.weekdays}</p>
+                  <p>{dict.footer.sunday}: {brand.hours.sunday}</p>
                 </div>
               </li>
             </ul>
@@ -157,14 +150,14 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
             <p>
-              &copy; {currentYear} {brand.name}. All rights reserved.
+              &copy; {currentYear} {brand.name}. {dict.footer.rights}
             </p>
             <div className="flex gap-4">
               <Link href="#" className="hover:text-background transition-colors">
-                Privacy Policy
+                {dict.footer.privacy}
               </Link>
               <Link href="#" className="hover:text-background transition-colors">
-                Terms of Service
+                {dict.footer.terms}
               </Link>
             </div>
           </div>

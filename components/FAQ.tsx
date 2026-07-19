@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
-import { brand, getWhatsAppUrl } from "@/lib/brand";
+import { getWhatsAppUrl } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const dict = useDictionary();
 
   return (
     <section id="faq" className="py-16 lg:py-24 bg-muted">
@@ -22,25 +24,23 @@ export default function FAQ() {
             className="lg:sticky lg:top-24"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-              FAQ
+              {dict.faq.label}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked{" "}
-              <span className="text-primary">Questions</span>
+              {dict.faq.heading.before}
+              <span className="text-primary">{dict.faq.heading.highlight}</span>
+              {dict.faq.heading.after}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Find answers to common questions about our services, operating
-              hours, and more. Can't find what you're looking for? Reach out to
-              us directly.
+              {dict.faq.subtitle}
             </p>
 
             {/* CTA Card */}
             <div className="bg-gradient-to-br from-primary to-primary/80 text-white rounded-2xl p-6">
               <HelpCircle className="size-10 mb-4 opacity-80" />
-              <h3 className="font-semibold text-lg mb-2">Still have questions?</h3>
+              <h3 className="font-semibold text-lg mb-2">{dict.faq.ctaTitle}</h3>
               <p className="text-sm text-white/80 mb-4">
-                Our team is ready to help you with any inquiries about our
-                services or appointments.
+                {dict.faq.ctaText}
               </p>
               <Button variant="secondary" asChild>
                 <a
@@ -48,7 +48,7 @@ export default function FAQ() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat with Us
+                  {dict.faq.ctaButton}
                 </a>
               </Button>
             </div>
@@ -61,7 +61,7 @@ export default function FAQ() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            {brand.faq.map((item, index) => (
+            {dict.faq.items.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}

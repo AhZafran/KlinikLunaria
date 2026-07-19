@@ -5,39 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Calendar, Users, Star, ArrowRight, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { brand, getWhatsAppUrl } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const stats = [
-  {
-    icon: Calendar,
-    value: `Since ${brand.foundedYear}`,
-    label: "Serving the Community",
-  },
-  {
-    icon: Users,
-    value: "1000+",
-    label: "Patients Served",
-  },
-  {
-    icon: Star,
-    value: "4.9",
-    label: "Google Rating",
-  },
-];
-
-const quickServices = [
-  { name: "General Consultation", icon: "🩺" },
-  { name: "Circumcision", icon: "✂️" },
-  { name: "House Calls", icon: "🏠" },
-  { name: "Health Screening", icon: "📋" },
-];
+const statIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Calendar,
+  Users,
+  Star,
+};
 
 export default function HeroSection() {
   const [currentDoctor, setCurrentDoctor] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const doctors = brand.doctors;
+  const dict = useDictionary();
+  const stats = dict.hero.stats;
+  const quickServices = dict.hero.quickServices;
+  const doctors = dict.hero.doctors;
 
   const nextDoctor = useCallback(() => {
     setCurrentDoctor((prev) => (prev + 1) % doctors.length);
@@ -91,21 +75,19 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
             >
               <span className="size-2 bg-primary rounded-full animate-pulse" />
-              {brand.tagline}
+              {dict.hero.badge}
             </motion.div>
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Your Trusted{" "}
-              <span className="text-primary">Healthcare Partner</span> in
-              Petaling Jaya
+              {dict.hero.heading.before}
+              <span className="text-primary">{dict.hero.heading.highlight}</span>
+              {dict.hero.heading.after}
             </h1>
 
             {/* Description */}
             <p className="text-lg text-muted-foreground max-w-xl">
-              Founded by Dr Jihan Hanis, {brand.name} provides comprehensive
-              healthcare services focused on preventive health, occupational
-              health, and personalized patient care.
+              {dict.hero.description}
             </p>
 
             {/* CTA Buttons */}
@@ -116,7 +98,7 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book Appointment
+                  {dict.hero.cta}
                   <ArrowRight className="size-5" />
                 </a>
               </Button>
@@ -124,7 +106,9 @@ export default function HeroSection() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8">
-              {stats.map((stat, index) => (
+              {stats.map((stat, index) => {
+                const StatIcon = statIconMap[stat.icon] || Calendar;
+                return (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
@@ -133,12 +117,13 @@ export default function HeroSection() {
                   className="text-center lg:text-left"
                 >
                   <div className="flex items-center justify-center lg:justify-start gap-2 mb-1">
-                    <stat.icon className="size-5 text-primary" />
+                    <StatIcon className="size-5 text-primary" />
                     <span className="text-2xl font-bold">{stat.value}</span>
                   </div>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 
@@ -250,7 +235,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6 }}
               className="absolute -left-4 top-8 bg-white rounded-xl shadow-xl p-4 hidden lg:block"
             >
-              <p className="text-sm font-medium mb-3">Quick Services</p>
+              <p className="text-sm font-medium mb-3">{dict.hero.quickServicesLabel}</p>
               <div className="space-y-2">
                 {quickServices.map((service) => (
                   <div
@@ -272,7 +257,7 @@ export default function HeroSection() {
               className="absolute -right-4 bottom-8 bg-secondary text-secondary-foreground rounded-xl shadow-xl p-4 hidden lg:block"
             >
               <p className="text-sm font-medium">📍 Menara PKNS</p>
-              <p className="text-xs opacity-80">Petaling Jaya, Selangor</p>
+              <p className="text-xs opacity-80">{dict.hero.locationCity}</p>
             </motion.div>
           </motion.div>
         </div>

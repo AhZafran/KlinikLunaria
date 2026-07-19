@@ -9,7 +9,7 @@ import {
   Building2,
   Clock,
 } from "lucide-react";
-import { brand } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   User,
@@ -21,6 +21,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function WhyChooseUs() {
+  const dict = useDictionary();
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-primary to-primary/80 text-white">
       <div className="container mx-auto px-4">
@@ -32,20 +33,21 @@ export default function WhyChooseUs() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 text-white rounded-full text-sm font-medium mb-4">
-            Why Choose Us
+            {dict.whyChooseUs.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why Patients Trust <span className="text-secondary">{brand.name}</span>
+            {dict.whyChooseUs.heading.before}
+            <span className="text-secondary">{dict.whyChooseUs.heading.highlight}</span>
+            {dict.whyChooseUs.heading.after}
           </h2>
           <p className="text-white/80">
-            We are committed to providing exceptional healthcare services with a
-            personal touch. Here's what sets us apart.
+            {dict.whyChooseUs.subtitle}
           </p>
         </motion.div>
 
         {/* Benefits Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {brand.whyChooseUs.map((item, index) => {
+          {dict.whyChooseUs.items.map((item, index) => {
             const IconComponent = iconMap[item.icon] || Heart;
             return (
               <motion.div

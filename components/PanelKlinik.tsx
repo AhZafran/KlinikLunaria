@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useDictionary } from "@/lib/i18n";
 
 const panels = [
   { name: "Panel 1", logo: "/images/panels/panel-1.png" },
@@ -20,6 +21,7 @@ const panels = [
 ];
 
 export default function PanelKlinik() {
+  const dict = useDictionary();
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -31,14 +33,15 @@ export default function PanelKlinik() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium mb-4">
-            Insurance Panels
+            {dict.panels.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Accepted <span className="text-primary">Insurance Panels</span>
+            {dict.panels.heading.before}
+            <span className="text-primary">{dict.panels.heading.highlight}</span>
+            {dict.panels.heading.after}
           </h2>
           <p className="text-muted-foreground">
-            We accept a wide range of corporate and insurance panels for your
-            convenience. Contact us to verify your coverage.
+            {dict.panels.subtitle}
           </p>
         </motion.div>
 
@@ -73,8 +76,7 @@ export default function PanelKlinik() {
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-8"
         >
-          Panel list may vary. Please contact us via WhatsApp to confirm your
-          insurance coverage.
+          {dict.panels.note}
         </motion.p>
       </div>
     </section>

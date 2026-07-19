@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { FeatureSection } from "@/components/ui/feature-section";
-import { brand } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
 export default function OurExpertise() {
+  const dict = useDictionary();
   return (
     <section id="expertise" className="py-16 lg:py-24 bg-muted">
       <div className="container mx-auto px-4">
@@ -16,14 +17,15 @@ export default function OurExpertise() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Our Expertise
+            {dict.expertise.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Specialized Healthcare <span className="text-primary">Expertise</span>
+            {dict.expertise.heading.before}
+            <span className="text-primary">{dict.expertise.heading.highlight}</span>
+            {dict.expertise.heading.after}
           </h2>
           <p className="text-muted-foreground">
-            We offer specialized services backed by professional training and
-            experience to ensure you receive the best possible care.
+            {dict.expertise.subtitle}
           </p>
         </motion.div>
 
@@ -35,7 +37,7 @@ export default function OurExpertise() {
           transition={{ delay: 0.2 }}
         >
           <FeatureSection
-            features={brand.expertise}
+            features={dict.expertise.items}
           />
         </motion.div>
       </div>

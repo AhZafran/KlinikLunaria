@@ -4,35 +4,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle, Award, Heart, Clock } from "lucide-react";
 import { brand } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
-const highlights = [
-  {
-    icon: Award,
-    title: "Experienced Care",
-    description: "Professional healthcare services by qualified practitioners",
-  },
-  {
-    icon: Heart,
-    title: "Patient-Centered",
-    description: "We prioritize your health education and wellbeing",
-  },
-  {
-    icon: Clock,
-    title: "Convenient Hours",
-    description: "Extended operating hours to fit your schedule",
-  },
-];
-
-const features = [
-  "General preventive health services",
-  "Occupational health & medical surveillance",
-  "Health education & counselling",
-  "Specialized circumcision procedures",
-  "Pediatric care for all ages",
-  "Convenient house call services",
-];
+const highlightIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Award,
+  Heart,
+  Clock,
+};
 
 export default function AboutUs() {
+  const dict = useDictionary();
+  const highlights = dict.about.highlights;
+  const features = dict.about.features;
   return (
     <section id="about" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -67,7 +50,7 @@ export default function AboutUs() {
               className="absolute -bottom-6 left-6 bg-primary text-primary-foreground rounded-xl p-4 shadow-xl"
             >
               <p className="text-3xl font-bold">{brand.foundedYear}</p>
-              <p className="text-sm opacity-90">Founded</p>
+              <p className="text-sm opacity-90">{dict.about.foundedBadge}</p>
             </motion.div>
           </motion.div>
 
@@ -81,29 +64,25 @@ export default function AboutUs() {
           >
             {/* Section Label */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/20 text-secondary-foreground rounded-full text-sm font-medium">
-              About Us
+              {dict.about.label}
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-              Your Trusted Healthcare Partner Since{" "}
-              <span className="text-primary">{brand.foundedMonth} {brand.foundedYear}</span>
+              {dict.about.heading.before}
+              <span className="text-primary">{dict.about.heading.highlight}</span>
+              {dict.about.heading.after}
             </h2>
 
             {/* Description */}
             <p className="text-muted-foreground leading-relaxed">
-              Founded by <strong>Dr Jihan Hanis</strong>, {brand.name} is
-              dedicated to providing comprehensive healthcare services with a
-              focus on preventive medicine and patient education. Located at
-              Menara PKNS, Petaling Jaya, we serve the community with
-              compassionate and professional care.
+              {dict.about.para1.before}
+              <strong>{dict.about.para1.name}</strong>
+              {dict.about.para1.after}
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              Our practice emphasizes general preventive health, occupational
-              health and medical surveillance screenings, health education, and
-              health counselling. We believe in empowering our patients with
-              knowledge and providing care that truly makes a difference.
+              {dict.about.para2}
             </p>
 
             {/* Features List */}
@@ -125,7 +104,9 @@ export default function AboutUs() {
 
             {/* Highlights */}
             <div className="grid sm:grid-cols-3 gap-4 pt-6">
-              {highlights.map((item, index) => (
+              {highlights.map((item, index) => {
+                const HighlightIcon = highlightIconMap[item.icon] || Award;
+                return (
                 <motion.div
                   key={item.title}
                   initial={{ opacity: 0, y: 20 }}
@@ -135,14 +116,15 @@ export default function AboutUs() {
                   className="text-center p-4 rounded-xl bg-muted"
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">
-                    <item.icon className="size-6" />
+                    <HighlightIcon className="size-6" />
                   </div>
                   <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
                   <p className="text-xs text-muted-foreground">
                     {item.description}
                   </p>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </div>

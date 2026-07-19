@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import { brand } from "@/lib/brand";
+import { useDictionary } from "@/lib/i18n";
 
 const testimonials = [
   {
@@ -61,6 +61,7 @@ function TestimonialCard({
 }: {
   testimonial: (typeof testimonials)[0];
 }) {
+  const dict = useDictionary();
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-border hover:shadow-md transition-shadow">
       {/* Quote Icon */}
@@ -85,7 +86,7 @@ function TestimonialCard({
           <p className="text-xs text-muted-foreground">{testimonial.service}</p>
         </div>
         <div className="text-xs text-primary font-medium px-2 py-1 bg-primary/10 rounded-full">
-          Verified
+          {dict.testimonials.verified}
         </div>
       </div>
     </div>
@@ -146,6 +147,7 @@ function ScrollingColumn({
 }
 
 export default function Testimonials() {
+  const dict = useDictionary();
   const column1 = testimonials.slice(0, 4);
   const column2 = testimonials.slice(4, 8);
 
@@ -160,14 +162,15 @@ export default function Testimonials() {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Testimonials
+            {dict.testimonials.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What Our <span className="text-primary">Patients Say</span>
+            {dict.testimonials.heading.before}
+            <span className="text-primary">{dict.testimonials.heading.highlight}</span>
+            {dict.testimonials.heading.after}
           </h2>
           <p className="text-muted-foreground">
-            Real feedback from real patients. We're proud to have served the
-            Petaling Jaya community since {brand.foundedYear}.
+            {dict.testimonials.subtitle}
           </p>
         </motion.div>
 
@@ -205,7 +208,7 @@ export default function Testimonials() {
             <div className="h-6 w-px bg-border" />
             <div>
               <span className="font-bold">4.9</span>
-              <span className="text-muted-foreground text-sm"> on Google</span>
+              <span className="text-muted-foreground text-sm">{dict.testimonials.onGoogle}</span>
             </div>
           </div>
         </motion.div>
